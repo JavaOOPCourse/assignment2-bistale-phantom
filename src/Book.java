@@ -8,50 +8,56 @@ public class Book {
 
     // TODO: Implement parameterized constructor
     public Book(String title, String author, int year) {
-        // implement
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.isAvailable = true;
     }
 
     // TODO: Implement copy constructor
     public Book(Book other) {
-        // implement
+        this.title = other.getTitle();
+        this.author = other.getAuthor();
+        this.year = other.getYear();
+        this.isAvailable = other.isAvailable();
     }
 
     // TODO: Implement getters
     public String getTitle() {
-        return null;
+        return title;
     }
 
     public String getAuthor() {
-        return null;
+        return author;
     }
 
     public int getYear() {
-        return 0;
+        return year;
     }
 
     public boolean isAvailable() {
-        return false;
+        return isAvailable;
     }
 
     // TODO: Implement borrow logic
     public void borrowBook() {
-        // implement
+        if (this.isAvailable) {
+            this.isAvailable = false;
+        }
+        System.out.println("book is not available");
     }
 
     // TODO: Implement return logic
     public void returnBook() {
-        // implement
+        this.isAvailable = true;
     }
 
-    // TODO: Override toString()
-    @Override
     public String toString() {
-        return "";
+        return "Title: " + this.title + ", Author: " + this.author + ", Year: " + this.year + ", Available: " + this.isAvailable ;
     }
 
-    // TODO: Override equals()
-    @Override
-    public boolean equals(Object obj) {
-        return false;
+    public boolean Equals(Book b) {
+        return this.title == b.getTitle() &&
+                this.year == b.getYear() && this.author == b.getAuthor();
     }
 }
