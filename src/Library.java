@@ -19,8 +19,8 @@ public class Library {
 
     // TODO: Display all books
     public void displayBooks() {
-        for (Book b: books) {
-            System.out.println(b);
+        for (int i=0; i < count; i++) {
+            System.out.println(books[i]);
         }
     }
 
